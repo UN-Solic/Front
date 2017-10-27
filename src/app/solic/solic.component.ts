@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Directive, Input } from '@angular/core';
 
 @Component({
   selector: 'app-solic',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./solic.component.css']
 })
 export class SolicComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  isCollapsed:boolean
+  constructor() {
+    this.isCollapsed=true;
+   }
 
   ngOnInit() {
   }
+
 
 }

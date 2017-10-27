@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {SolicComponent} from './solic.component';
+
+
 const solicRoutes: Routes = [
 {
   path :'',
@@ -11,6 +13,8 @@ const solicRoutes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(solicRoutes)],
-  exports: [RouterModule]
+ 
+  exports: [RouterModule,
+    ]
 })
 export class SolicRoutingModule { }

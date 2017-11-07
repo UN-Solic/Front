@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     {
         path: 'app' ,
         loadChildren: 'app/solic/solic.module#SolicModule'
+        
     },
     {
         path: '',

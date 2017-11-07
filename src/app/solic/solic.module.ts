@@ -7,16 +7,21 @@ import {SolicComponent}from './solic.component';
 import { MdlModule } from '@angular-mdl/core';
 import { ChartsComponent } from './charts/charts.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
     SolicRoutingModule,
-    MdlModule
+    MdlModule,
+   
+    
   ],
   declarations: [
     SolicComponent,
-    ChartsComponent,
-    
+    //DevicesComponent,
+    //ReportsComponent,
+    //StatisticsComponent,
+    ChartsComponent
   ]
 })
 export class SolicModule { }

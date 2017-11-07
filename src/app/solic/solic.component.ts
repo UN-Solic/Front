@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Directive, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solic',
@@ -7,14 +8,15 @@ import { Directive, Input } from '@angular/core';
   styleUrls: ['./solic.component.css']
 })
 export class SolicComponent implements OnInit {
-  @Input()
-  isCollapsed:boolean
-  constructor() {
-    this.isCollapsed=true;
+  public href: string = "";
+  constructor(private router: Router) {
+
    }
 
-  ngOnInit() {
-  }
+   ngOnInit() {
+  
+    
+}
 
 
 }

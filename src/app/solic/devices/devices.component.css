@@ -1,0 +1,35 @@
+.device {
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    
+  }
+.thermometer{
+    width: 100px;
+    height: 100px;
+}
+.battery{
+    width: 100px;
+    height: 100px;
+}
+img{
+    display: block;
+    margin: auto;
+}
+table
+{ 
+    margin-left: auto;
+    margin-right: auto;
+}
+button{
+    display: block;
+    margin: auto;
+}
+.mdl-grid .mdl-grid.mdl-grid--nesting {
+    padding: 0;
+    margin: auto;
+  }
+div.mdl-cell.mdl-cell-2{
+    font-size: 300%;
+    margin:auto;
+}

@@ -4,10 +4,10 @@ import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { AmChartsService } from "@amcharts/amcharts3-angular";
 
 import {SharedModule} from'./shared/shared.module';
-
+import {ChartService} from './services/chart/chart.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,10 +19,12 @@ import {SharedModule} from'./shared/shared.module';
    
     BrowserModule,
     AppRoutingModule,
+    SharedModule
    
     
   ],
-  providers: [],
+  providers: [AmChartsService,
+              ChartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

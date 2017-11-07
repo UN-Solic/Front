@@ -1,90 +1,93 @@
-import { Component, OnInit,AfterViewInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit ,OnChanges} from '@angular/core';
 import { AmChartsService,AmChart } from "@amcharts/amcharts3-angular";
+import {ChartService} from'../../services/chart/chart.service';
+
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.css']
 })
-export class ChartsComponent implements AfterViewInit {
+export class ChartsComponent implements AfterViewInit , OnInit{
   private chart:AmChart;
+  private data = [];
+  isDataLoaded:boolean=false;
+ 
+  constructor(
+    private AmCharts: AmChartsService,
+    private chartService: ChartService
+  )    
+  {}
 
+ loadChart(data){
+    this.chart = this.AmCharts.makeChart("chart",
+    {
+      "type": "serial",
+      "categoryField": "time",
+      "dataDateFormat": "YYYY-MM-DD HH:NN:SS",
+      "categoryAxis": {
+        "minPeriod": "ss",
+        "parseDates": true
+      },
+      "chartCursor": {
+        "enabled": true,
+        "categoryBalloonDateFormat": "JJ:NN:SS"
+      },
+      "chartScrollbar": {
+        "enabled": true
+      },
+      
+      "graphs": [
+        {
+          "bullet": "round",
+          "id": "AmGraph-1",
+          "title": "graph 1",
+          "valueField": "measure"
+        },
+      ],
+      
+      "valueAxes": [
+        {
+          "id": "ValueAxis-1",
+          "title": "Axis title"
+        }
+      ],
+  
+      "legend": {
+        "enabled": true,
+        "useGraphSettings": true
+      },
+      "titles": [
+        {
+          "id": "Title-1",
+          "size": 15,
+          "text": "Chart Title"
+        }
+      ],
+      "dataProvider":data
+    })
+ }
+
+  ngOnInit(){
+   
+    this.chartService.getData().subscribe(response=>{
+
+      this.data=response.json();
+      console.log("oninit")
+
+      //console.log(this.data)
+
+      this.loadChart(this.data);
+    })    
+
+  }
+
+  ngAfterViewInit() {
  
 
-  constructor(private AmCharts: AmChartsService) { 
     
-  }
-  makeRandomDataProvider() {
-    var dataProvider = [];
-
-    // Generate random data
-    for (var year = 1950; year <= 2005; ++year) {
-      dataProvider.push({
-        year: "" + year,
-        value: Math.floor(Math.random() * 100) - 50
-      });
-    }
-
-    return dataProvider;
-  }
-  ngAfterViewInit() {
-
-  this.chart = this.AmCharts.makeChart("chart", {
-    "type": "serial",
-    "theme": "light",
-    "marginTop":0,
-    "marginRight": 80,
-    "dataProvider": this.makeRandomDataProvider(),
-    "valueAxes": [{
-      "axisAlpha": 0,
-      "position": "left"
-    }],
-    "graphs": [{
-      "id":"g1",
-      "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
-      "bullet": "round",
-      "bulletSize": 8,
-      "lineColor": "#d1655d",
-      "lineThickness": 2,
-      "negativeLineColor": "#637bb6",
-      "type": "smoothedLine",
-      "valueField": "value"
-    }],
-    "chartScrollbar": {
-      "graph":"g1",
-      "gridAlpha":0,
-      "color":"#888888",
-      "scrollbarHeight":55,
-      "backgroundAlpha":0,
-      "selectedBackgroundAlpha":0.1,
-      "selectedBackgroundColor":"#888888",
-      "graphFillAlpha":0,
-      "autoGridCount":true,
-      "selectedGraphFillAlpha":0,
-      "graphLineAlpha":0.2,
-      "graphLineColor":"#c2c2c2",
-      "selectedGraphLineColor":"#888888",
-      "selectedGraphLineAlpha":1
-    },
-    "chartCursor": {
-      "categoryBalloonDateFormat": "YYYY",
-      "cursorAlpha": 0,
-      "valueLineEnabled":true,
-      "valueLineBalloonEnabled":true,
-      "valueLineAlpha":0.5,
-      "fullWidth":true
-    },
-    "dataDateFormat": "YYYY",
-    "categoryField": "year",
-    "categoryAxis": {
-      "minPeriod": "YYYY",
-      "parseDates": true,
-      "minorGridAlpha": 0.1,
-      "minorGridEnabled": true
-    },
-    "export": {
-      "enabled": true
-    }
-  });
   }
 
   

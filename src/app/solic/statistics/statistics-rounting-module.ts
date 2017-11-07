@@ -6,7 +6,8 @@ import {StatisticsComponent} from './statistics.component';
 export const statisticsRoutes: Routes = [
 {
 path: '',
-component:StatisticsComponent
+component:StatisticsComponent,
+
 }
 ];
 

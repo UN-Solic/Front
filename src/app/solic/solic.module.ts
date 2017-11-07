@@ -5,7 +5,7 @@ import { SolicRoutingModule } from './solic-routing.module';
 import {SolicComponent}from './solic.component';
 
 import { MdlModule } from '@angular-mdl/core';
-import { ChartsComponent } from './charts/charts.component';
+
 
 
 @NgModule({
@@ -18,10 +18,8 @@ import { ChartsComponent } from './charts/charts.component';
   ],
   declarations: [
     SolicComponent,
-    //DevicesComponent,
-    //ReportsComponent,
-    //StatisticsComponent,
-    ChartsComponent
+    
+
   ]
 })
 export class SolicModule { }

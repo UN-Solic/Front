@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewChild} from '@angular/core';
+import {DatePickerComponent} from 'ng2-date-picker';
 
 @Component({
   selector: 'app-statistics',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./statistics.component.css']
 })
 export class StatisticsComponent implements OnInit {
+  constructor() {
+    
+   }
 
-  constructor() { }
+ 
 
   ngOnInit() {
+      
   }
 
 }

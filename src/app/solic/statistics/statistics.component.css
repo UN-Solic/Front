@@ -1,0 +1,15 @@
+h2{
+    text-align: center
+}
+.windmill {
+    width: 50px;
+    height: 50px;
+  }
+.irradiance {
+    width: 50px;
+    height: 50px;
+  }
+.thermometer{
+    width: 50px;
+    height: 50px;
+}

@@ -25,9 +25,9 @@ button{
     display: block;
     margin: auto;
 }
-.mdl-grid .mdl-grid.mdl-grid--nesting {
+.mdl-grid.mdl-grid--nesting {
     padding: 0;
-    margin: auto;
+    margin:  -8px;
   }
 div.mdl-cell.mdl-cell-2{
     font-size: 300%;

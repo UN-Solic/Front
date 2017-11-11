@@ -8,7 +8,7 @@ import {ChartsRoutingModule}from '../charts/charts-routing.module';
 import { DateTimePickerModule } from 'ng-pick-datetime';
 
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ChartsRoutingModule,
     DateTimePickerModule,
     FormsModule,
-    ReactiveFormsModule
+
+    
   ],
   declarations: [
     StatisticsComponent,

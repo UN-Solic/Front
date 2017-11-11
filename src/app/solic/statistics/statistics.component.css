@@ -13,3 +13,13 @@ h2{
     width: 50px;
     height: 50px;
 }
+#start{
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+}
+#end{
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+}

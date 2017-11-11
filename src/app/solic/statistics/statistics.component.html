@@ -7,11 +7,18 @@
 
 </div>
 <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--6-col">
-            <owl-date-time [(ngModel)]="moment" ></owl-date-time>
+        <div class="mdl-cell mdl-cell--6-col" id ="start" >
+          <h4>Fecha inicial</h4>
+          <input id="date" type="date"[(ngModel)]="startDate">
+          <input id="time" type="time"[(ngModel)]="startTime">
         </div>
-        <div class="mdl-cell mdl-cell--6-col">
-
+        <div class="mdl-cell mdl-cell--6-col" id ="end">
+            <h4>Fecha final</h4>
+          <input id="date" type="date" [(ngModel)]="endDate">
+          <input id="time" type="time"[(ngModel)]="endTime">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"(click)="send()">
+              enviar
+            </button>
         </div>
 
 </div>

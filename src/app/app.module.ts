@@ -8,6 +8,7 @@ import { AmChartsService } from "@amcharts/amcharts3-angular";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from'./shared/shared.module';
 import {ChartService} from './services/chart/chart.service'
+import {StatisticsService} from './services/statistics/statistics.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,9 @@ import {ChartService} from './services/chart/chart.service'
     
   ],
   providers: [AmChartsService,
-              ChartService],
+              ChartService,
+              StatisticsService
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
